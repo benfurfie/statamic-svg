@@ -1,0 +1,6 @@
+{
+  "name": "benfurfie/svgclasses",
+  "require": {
+      "oscarotero/inline-svg": "^2.0"
+  }
+}
