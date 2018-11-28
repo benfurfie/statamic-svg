@@ -86,12 +86,19 @@ class SvgTags extends Tags
         /**
          * Handle SVG manipulation
          */
-        $output = $svgs->get($filename)->withAttributes([
-            'class' => $classes,
-            'height' => $height,
-            'width' => $width
-        ])->withA11y($a11y);
+        // First check if the values exist and if they do, set the them to value of the param.
+        $args = [
+            'class' => ((false) ? null : $classes),
+            'height' => ((false) ? null : $height),
+            'width' => ((false) ? null : $width)
+        ];
 
+        // Filter the array so we remove any null values.
+        $args = array_filter($args, 'strlen');
+
+        // Pass the args to the function and set it ready for output.
+        $output = $svgs->get($filename)->withAttributes($args)->withA11y($a11y);
+        
         return $output;        
     }
 
