@@ -73,7 +73,17 @@ class SvgTags extends Tags
          * Hence all the work above.
          */
         $svgs = Collection::fromPath($folder);
-        $svgs->addTransformer(new Cleaner());
+
+        /**
+         * Check if we allow are allowing IDs. If we are, do nothing.
+         * Else, scrub IDs. Be warned, if your SVGs use IDs for styling, they will lose that styling.
+         * Hence, this is set to false by default.
+         */
+        $allowIds = $this->getParam('allowIds');
+        if(!$allowIds)
+        {
+            $svgs->addTransformer(new Cleaner());
+        }
 
         /**
          * Pull in all the other parameters that we can use.
