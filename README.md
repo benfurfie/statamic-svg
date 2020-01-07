@@ -3,12 +3,21 @@
 This addon lets you inline and manipulate inline SVGs, including injecting classes, width and height properties, and a11y configuration. "But that's what the [output modifier](https://docs.statamic.com/tags/theme-output) is for!", I hear you cry. Believe me — this addon will make your life so much easier, that you'll want to cry and name your first-born after me... okay, that's maybe too far, but it will make your life a hell of a lot easier.
 
 ## Installation
-Download the [zip file](https://github.com/benfurfie/statamic-svg/archive/master.zip) and add the `svg` folder to your Statamic Addons folder (typically `/site/addons/`). Then, in the command line, run `php please update:addon` from your Statamic root path. Composer will update the plugin, which you can check on your Addons view in the control panel. 
 
-## Version 2
-This is version two of the plugin. I've pretty much refactored the entire addon and changed some bits that I wasn't happy with. **The only breaking change** is to the CSS parameter: this is now `class`, rather than `classes`. Other than that, it remains the same.
+Run the following command in your Statamic v3 root directory:
+
+```
+composer require benfurfie/statamic-svg
+```
+
+Run the following command to ensure the new addon is discovered:
+
+```
+php please addons:discover
+```
 
 ## Usage
+
 The only parameter that is necessary with this tag is `src` (otherwise, it won't know what to output).
 
 You can define this as a path to your asset container, or you can refer to a fieldset key (note the single brackets).
@@ -17,7 +26,7 @@ You can define this as a path to your asset container, or you can refer to a fie
 {{ svg src="/assets/svg/phone.svg" }}
 ```
 
-or 
+or
 
 ```yaml
 ---
