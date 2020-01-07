@@ -1,6 +1,32 @@
 {
-  "name": "benfurfie/svgclasses",
-  "require": {
-      "oscarotero/inline-svg": "^2.0"
-  }
+    "name": "benfurfie/statamic-svg",
+    "description": "SVG modifier for Statamic",
+    "type": "statamic-addon",
+    "autoload": {
+        "psr-4": {
+            "Benfurfie\\StatamicSvg\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ben Furfie"
+        },
+        {
+            "name": "Christian Thomas"
+        }
+    ],
+    "extra": {
+        "statamic": {
+            "name": "Statamic SVG",
+            "description": "Statamic SVG addon"
+        },
+        "laravel": {
+            "providers": [
+                "Benfurfie\\StatamicSvg\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "oscarotero/inline-svg": "^2.0"
+    }
 }
