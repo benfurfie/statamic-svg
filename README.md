@@ -32,6 +32,8 @@ will work. As I said before, the only crucial thing at the moment is that you ne
 ## Additional parameters
 Okay, so that's cool, but that's nothing `{{ icon | output }}` couldn't do. The real power of the addon is that you can pass through additional parameters and have them output in the SVG.
 
+Allow to have IDs in you SVG code by adding paramenter `{{ icon allowIds='true' }}`.
+
 ### Injecting CSS Classes
 You can pass classes into your SVG by using the `class` parameter. This is especially useful if you use TailwindCSS and want to avoid having to create non-class-based CSS.
 
